@@ -120,6 +120,7 @@ EduVLM-Bench is a research-focused web application that presents a multimodal be
 ✓ Clean white background with academic styling
 ✓ Fixed Select component validation errors
 ✓ Responsive design with mobile-friendly layout
+✓ Created simple HTML/CSS/JS version in `simple-site/` directory for beginners
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
