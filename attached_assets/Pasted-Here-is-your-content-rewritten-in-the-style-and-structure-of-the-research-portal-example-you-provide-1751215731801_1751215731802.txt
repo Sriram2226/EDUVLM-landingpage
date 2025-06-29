@@ -1,0 +1,124 @@
+Here is your content rewritten in the style and structure of the research portal example you provided:
+
+---
+
+**EduVLM-Bench**
+**A Multimodal Benchmark for Educational Concept Learning**
+A novel framework to evaluate vision-language models (VLMs) on educational reasoning tasks through concept prerequisite identification, error analysis, and learning path generation.
+
+**Download Paper**
+**Cite This Work**
+
+---
+
+### **Abstract**
+
+We introduce **EduVLM-Bench**, a multimodal benchmark designed to evaluate educational concept understanding in Vision-Language Models (VLMs). Our framework focuses on identifying prerequisite concepts necessary for solving math and English problems, especially when a model or student fails to produce the correct answer.
+
+Using structured human-AI tutoring interactions and expert-generated concept maps, we explore the capability of models to bridge the gap between confusion and conceptual clarity. Evaluations span across common error types, prerequisite inference, and guided learning trajectory generation, with models ranging from 2B to 7B parameters, including Gemini 2.0 Flash.
+
+---
+
+### **Authors**
+
+1. Arka Mukerjee
+2. Sriram P, BE. CSE, Annamalai University
+3. Abhishekh Padhypalli
+4. Nilam Bhojwani
+
+---
+
+### **Methodology**
+
+#### **1. Concept Taxonomy Building**
+
+* Use GPT-4 with domain expert review to construct detailed concept maps for math and English tasks (starting with GSM-8K).
+* Establish concept hierarchies and dependency paths.
+
+#### **2. Error-Prerequisite Mapping**
+
+* Simulate common student mistakes using LLMs (e.g., ChatGPT, Flan T5 250M).
+* Collect a wide range of incorrect answers for each problem.
+* Human teachers annotate which prerequisite concepts are missing.
+
+#### **3. Benchmark Construction**
+
+* **Input**: Problem statement + Incorrect model response.
+* **Task**: Identify top-k missing prerequisites.
+* **Evaluation**: Precision, recall, and alignment with human annotations.
+* **Extension**: Generate a personalized learning path from the model's "confused" state to the correct concept.
+
+---
+
+### **Experimental Setup**
+
+#### **AI Student Simulation**
+
+* ChatGPT and Flan T5 250M were used to simulate common student errors.
+* AI "students" were designed to reflect confusion similar to 6th-grade learners.
+
+#### **Human-AI Tutoring**
+
+* 91 experienced teachers engaged in guided conversations with AI students.
+* Teachers used instructional strategies such as:
+
+  * **Focus**: Direct concept instruction
+  * **Probing**: Deep questioning for clarity
+  * **Telling**: Providing information directly
+  * **Generic**: Conversational scaffolding
+
+---
+
+### **Key Findings**
+
+**82.6%**
+*Concept Recall Rate*
+Annotators accurately mapped student errors to missing prerequisite concepts in over 80% of cases.
+
+**74.3%**
+*Model Prerequisite Identification Accuracy*
+Top-performing models successfully identified relevant missing concepts for incorrect responses.
+
+**61.7%**
+*Learning Path Quality Score*
+Generated learning paths showed promising structure but require further refinement for deeper conceptual coverage.
+
+---
+
+### **Performance Analysis**
+
+**Model Comparison**
+Flan T5 250M outperformed GPT-3.5 in zero-shot confusion handling. Larger models (7B and above) showed more robust error mapping but with diminishing returns on visual tasks.
+
+**Scaling Effects**
+While larger models show overall improvement, precision in prerequisite detection plateaus, suggesting the need for more targeted training.
+
+---
+
+### **Research Gallery**
+
+* **Concept Maps**
+  Visual hierarchies outlining foundational and dependent concepts in math reasoning.
+
+* **Tutoring Demo**
+  Live interaction between a human teacher and an AI student, showcasing confusion resolution.
+
+* **Model Evaluations**
+  Comparative analytics for 2B, 4B, 7B, and Gemini models across prerequisite detection tasks.
+
+* **Learning Path Generator**
+  Visualization of steps needed to guide the model from incorrect to correct understanding.
+
+---
+
+### **Access Our Research**
+
+Download the full benchmark paper and access code, visualizations, and datasets.
+
+**Download PDF**
+**Generate Citation**
+**View Code**
+
+---
+
+Would you like me to help turn this into a React landing page as well?
