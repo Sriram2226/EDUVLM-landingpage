@@ -43,9 +43,9 @@ export function filterLeaderboardData(
   sizeFilter: string
 ): LeaderboardEntry[] {
   return data.filter(entry => {
-    const matchesType = !modelTypeFilter || 
+    const matchesType = modelTypeFilter === 'all' || !modelTypeFilter || 
       entry.modelName.toLowerCase().includes(modelTypeFilter.toLowerCase());
-    const matchesSize = !sizeFilter || entry.size === sizeFilter;
+    const matchesSize = sizeFilter === 'all' || !sizeFilter || entry.size === sizeFilter;
     
     return matchesType && matchesSize;
   });

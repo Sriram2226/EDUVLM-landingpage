@@ -21,23 +21,19 @@ export function Navigation() {
               </h1>
             </Link>
             <div className="hidden md:flex space-x-6">
-              <Link href="/">
-                <a className={`transition-colors ${
-                  location === '/' 
-                    ? 'text-[var(--academic-blue)]' 
-                    : 'text-[var(--slate-grey)] hover:text-[var(--academic-blue)]'
-                }`}>
-                  Research
-                </a>
+              <Link href="/" className={`transition-colors ${
+                location === '/' 
+                  ? 'text-[var(--academic-blue)]' 
+                  : 'text-[var(--slate-grey)] hover:text-[var(--academic-blue)]'
+              }`}>
+                Research
               </Link>
-              <Link href="/leaderboard">
-                <a className={`transition-colors ${
-                  location === '/leaderboard' 
-                    ? 'text-[var(--academic-blue)]' 
-                    : 'text-[var(--slate-grey)] hover:text-[var(--academic-blue)]'
-                }`}>
-                  Leaderboard
-                </a>
+              <Link href="/leaderboard" className={`transition-colors ${
+                location === '/leaderboard' 
+                  ? 'text-[var(--academic-blue)]' 
+                  : 'text-[var(--slate-grey)] hover:text-[var(--academic-blue)]'
+              }`}>
+                Leaderboard
               </Link>
             </div>
           </div>

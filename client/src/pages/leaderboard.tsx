@@ -8,12 +8,13 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronUp, ChevronDown, RotateCcw } from "lucide-react";
 import { sortLeaderboardData, filterLeaderboardData, type SortDirection, type SortColumn } from "@/lib/leaderboard-data";
 import type { LeaderboardEntry } from "@shared/schema";
+import { Footer } from "@/components/footer";
 
 export default function Leaderboard() {
   const [sortColumn, setSortColumn] = useState<SortColumn>('rank');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
-  const [modelTypeFilter, setModelTypeFilter] = useState<string>('');
-  const [sizeFilter, setSizeFilter] = useState<string>('');
+  const [modelTypeFilter, setModelTypeFilter] = useState<string>('all');
+  const [sizeFilter, setSizeFilter] = useState<string>('all');
 
   const { data: leaderboardData, isLoading, error } = useQuery<LeaderboardEntry[]>({
     queryKey: ['/api/leaderboard'],
@@ -36,8 +37,8 @@ export default function Leaderboard() {
   };
 
   const resetFilters = () => {
-    setModelTypeFilter('');
-    setSizeFilter('');
+    setModelTypeFilter('all');
+    setSizeFilter('all');
     setSortColumn('rank');
     setSortDirection('asc');
   };
@@ -122,7 +123,7 @@ export default function Leaderboard() {
                     <SelectValue placeholder="All Model Types" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Model Types</SelectItem>
+                    <SelectItem value="all">All Model Types</SelectItem>
                     <SelectItem value="GPT">GPT Models</SelectItem>
                     <SelectItem value="Flan">Flan Models</SelectItem>
                     <SelectItem value="Gemini">Gemini Models</SelectItem>
@@ -134,7 +135,7 @@ export default function Leaderboard() {
                     <SelectValue placeholder="All Sizes" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Sizes</SelectItem>
+                    <SelectItem value="all">All Sizes</SelectItem>
                     <SelectItem value="250M">250M</SelectItem>
                     <SelectItem value="2B">2B</SelectItem>
                     <SelectItem value="4B">4B</SelectItem>
@@ -230,6 +231,7 @@ export default function Leaderboard() {
           </Card>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

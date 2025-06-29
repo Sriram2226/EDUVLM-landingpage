@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, Quote, Code, BookOpen, Users, BarChart3, Target } from "lucide-react";
 import { CitationModal } from "@/components/citation-modal";
+import { Footer } from "@/components/footer";
 
 export default function Landing() {
   const [showCitation, setShowCitation] = useState(false);
@@ -301,6 +302,7 @@ export default function Landing() {
       </section>
 
       <CitationModal open={showCitation} onOpenChange={setShowCitation} />
+      <Footer />
     </div>
   );
 }
