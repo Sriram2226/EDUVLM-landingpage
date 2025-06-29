@@ -6,28 +6,33 @@ This is a simplified version of the EduVLM-Bench research website built with onl
 
 ```
 simple-site/
-├── index.html      # Main HTML file with all content
-├── styles.css      # Custom CSS styles and color variables
-├── script.js       # JavaScript for interactivity
-└── README.md       # This file
+├── index.html         # Research overview page
+├── leaderboard.html   # Model leaderboard page
+├── styles.css         # Custom CSS styles and color variables
+├── script.js          # JavaScript for interactivity
+└── README.md          # This file
 ```
 
 ## Features
 
-- **Clean Academic Design**: White background with professional styling
-- **Two Main Pages**: Research overview and Model leaderboard
-- **Interactive Leaderboard**: Sortable table with filtering options
+- **Mobile-First Design**: Responsive layout optimized for all devices
+- **Two Separate Pages**: Research overview (`index.html`) and Model leaderboard (`leaderboard.html`)
+- **Interactive Navigation**: Mobile hamburger menu and desktop navigation bar
+- **Mobile Leaderboard Cards**: Easy-to-read cards on mobile devices
+- **Desktop Table View**: Full sortable table for larger screens
+- **Interactive Filtering**: Sort and filter model performance data
 - **Citation Modal**: Copy research citation to clipboard
-- **Responsive Design**: Works on desktop and mobile devices
-- **Simple Navigation**: Easy switching between pages
+- **Clean Academic Styling**: Professional white background with academic blue theme
 
 ## How to Use
 
-1. **Open the Website**: Double-click `index.html` or open it in any web browser
-2. **Navigate**: Click "Research" or "Leaderboard" in the navigation
-3. **Sort Data**: Click column headers in the leaderboard to sort
-4. **Filter Models**: Use the dropdown filters to narrow results
-5. **Get Citation**: Click "Generate Citation" to copy the research citation
+1. **Open the Website**: Start with `index.html` in any web browser
+2. **Navigate on Desktop**: Use the navigation bar to switch between Research and Leaderboard
+3. **Navigate on Mobile**: Tap the hamburger menu (☰) for navigation options
+4. **View Leaderboard**: Switch to `leaderboard.html` to see model performance
+5. **Sort Data**: Click column headers (desktop) to sort the leaderboard
+6. **Filter Models**: Use dropdown filters to narrow results by model type or size
+7. **Get Citation**: Click "Citation" button to copy the research citation
 
 ## Customization Guide
 
@@ -56,11 +61,13 @@ Edit the CSS variables in `styles.css`:
 
 ## Key JavaScript Functions
 
-- `showPage(pageName)` - Switch between research and leaderboard pages
+- `toggleMobileMenu()` - Show/hide mobile navigation menu
 - `sortTable(column)` - Sort leaderboard by column
-- `renderLeaderboard()` - Update the table display
+- `renderLeaderboard()` - Update both desktop table and mobile cards
 - `showCitation()` - Display citation modal
 - `copyCitation()` - Copy citation to clipboard
+- `downloadPaper()` - Handle paper download action
+- `resetFilters()` - Clear all leaderboard filters
 
 ## Browser Compatibility
 
