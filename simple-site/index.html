@@ -38,14 +38,25 @@
                     </a>
                 </div>
                 
-                <!-- Desktop Download Button -->
-                <div class="hidden md:flex items-center">
+                <!-- Desktop Download Button & Auth -->
+                <div class="hidden md:flex items-center space-x-3">
                     <button onclick="downloadPaper()" class="bg-accent-amber text-white hover:bg-yellow-500 transition-colors font-medium px-4 py-2 rounded-md flex items-center text-sm">
                         <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>
                         Download
                     </button>
+                    
+                    <!-- Authentication Section -->
+                    <div id="authContainer" class="auth-container flex space-x-2">
+                        <button id="showLoginBtn" class="auth-btn login-btn bg-academic-blue text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Login</button>
+                        <button id="showRegisterBtn" class="auth-btn register-btn bg-white text-academic-blue border border-academic-blue hover:bg-gray-50 px-3 py-2 rounded-md text-sm font-medium transition-colors">Sign Up</button>
+                    </div>
+                    
+                    <!-- User Info Section (hidden by default) -->
+                    <div id="userInfo" class="user-info" style="display: none;">
+                        <!-- User info will be populated by JavaScript -->
+                    </div>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -310,6 +321,73 @@
     </div>
 
     <!-- JavaScript -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="auth-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login to EduVLM-Bench</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+                <p class="switch-auth">
+                    Don't have an account? <a href="#" id="switchToRegister">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="auth-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sign Up for EduVLM-Bench</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="registerForm" class="auth-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required minlength="3" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" name="password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6">
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+                <p class="switch-auth">
+                    Already have an account? <a href="#" id="switchToLogin">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>
